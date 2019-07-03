@@ -43,6 +43,13 @@
   <ItemGroup>
     <Compile Include="DbConnector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Readers\DataReader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Studenter Logic\Studenter Logic.csproj">
+      <Project>{4cdeeecb-f0e6-4c5d-82ea-35df105d1b84}</Project>
+      <Name>Studenter Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

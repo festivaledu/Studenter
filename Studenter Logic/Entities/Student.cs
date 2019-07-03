@@ -6,7 +6,7 @@ namespace Studenter.Logic.Entities
     public class Student
     {
         public string Id { get; private set; }
-        public string Name { get; set; }
+        public string GivenName { get; set; }
         public string FamilyName { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
@@ -18,9 +18,9 @@ namespace Studenter.Logic.Entities
             this.Id = Guid.NewGuid().ToString();
         }
 
-        public Student(string id, string name, string familyName, string address, string email, int matrikelNumber, string faculty, string course) {
+        public Student(string id, string givenName, string familyName, string address, string email, int matrikelNumber, string faculty, string course) {
             this.Id = id;
-            this.Name = name;
+            this.GivenName = givenName;
             this.FamilyName = familyName;
             this.Address = address;
             this.Email = email;
@@ -31,7 +31,7 @@ namespace Studenter.Logic.Entities
 
         public Student(DbDataReader dataReader) {
             this.Id = dataReader.GetString(0);
-            this.Name = dataReader.GetString(1);
+            this.GivenName = dataReader.GetString(1);
             this.FamilyName = dataReader.GetString(2);
             this.Address = dataReader.GetString(3);
             this.Email = dataReader.GetString(4);
