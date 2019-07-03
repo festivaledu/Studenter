@@ -3,6 +3,7 @@ using System.Windows;
 using Studenter.Data.Factories;
 using Studenter.Logic;
 using Studenter.Logic.Factories;
+using Studenter.Presentation.Factories;
 
 namespace Studenter.Monitor
 {
@@ -25,8 +26,10 @@ namespace Studenter.Monitor
                 var queries = LogicQueriesFactory.CreateInstance(dataReader);
                 var commands = LogicCommandsFactory.CreateInstance(dataWriter);
 
+                var dialog = DialogFactory.CreateInstance(queries, commands);
+
                 var app = new Application();
-                app.Run();
+                app.Run(dialog as Window);
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Studenter", MessageBoxButton.OK, MessageBoxImage.Error);
             } finally {

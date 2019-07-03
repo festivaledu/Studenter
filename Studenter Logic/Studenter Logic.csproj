@@ -47,6 +47,7 @@
     <Compile Include="Factories\LogicQueriesFactory.cs" />
     <Compile Include="IDataReader.cs" />
     <Compile Include="IDataWriter.cs" />
+    <Compile Include="IDialog.cs" />
     <Compile Include="ILogicCommands.cs" />
     <Compile Include="ILogicQueries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
