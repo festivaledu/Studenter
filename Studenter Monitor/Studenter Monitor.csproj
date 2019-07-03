@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,13 +42,29 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Injector.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Studenter Data\Studenter Data.csproj">
+      <Project>{52ec5986-c460-4205-ad8e-9be1ad265268}</Project>
+      <Name>Studenter Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Studenter Logic\Studenter Logic.csproj">
+      <Project>{4cdeeecb-f0e6-4c5d-82ea-35df105d1b84}</Project>
+      <Name>Studenter Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Studenter Presentation\Studenter Presentation.csproj">
+      <Project>{d6c6a0b5-07e9-4fa1-ae13-957d514d85f9}</Project>
+      <Name>Studenter Presentation</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
