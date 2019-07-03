@@ -24,8 +24,10 @@ namespace Studenter.Data
 
         protected static void AddParameter(DbCommand command, string parameterName, object parameterValue) {
             var parameter = command.CreateParameter();
+
             parameter.ParameterName = parameterName;
             parameter.Value = parameterValue;
+
             command.Parameters.Add(parameter);
         }
 
