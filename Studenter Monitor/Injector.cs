@@ -9,12 +9,12 @@ namespace Studenter.Monitor
 {
     internal class Injector
     {
-        private IDataReader dataReader = null;
-        private IDataWriter dataWriter = null;
+        private IDataReader dataReader;
+        private IDataWriter dataWriter;
         private string sourcePath;
 
         internal void Run() {
-            sourcePath = @"G:\Studium\Komponentenbasierte Softwareentwicklung\Studenter\resources\database.accdb";
+            sourcePath = @"C:\Users\Fabian\Documents\Visual Studio 2017\Projects\Studenter\resources\database.accdb";
 
             try {
                 dataReader = DataReaderFactory.CreateInstance(sourcePath);
@@ -33,13 +33,8 @@ namespace Studenter.Monitor
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Studenter", MessageBoxButton.OK, MessageBoxImage.Error);
             } finally {
-                if (dataReader != null) {
-                    dataReader.CloseDb();
-                }
-
-                if (dataWriter != null) {
-                    dataWriter.CloseDb();
-                }
+                dataReader?.CloseDb();
+                dataWriter?.CloseDb();
             }
         }
     }

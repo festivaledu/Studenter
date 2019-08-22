@@ -8,8 +8,16 @@ namespace Studenter.Presentation.Views
     /// </summary>
     public partial class MainView : Window, IDialog
     {
-        internal MainView() {
+        private AboutView aboutView;
+
+        internal MainView(AboutView aboutView) {
             InitializeComponent();
+
+            this.aboutView = aboutView;
+        }
+
+        private void OnAboutClick(object sender, RoutedEventArgs e) {
+            aboutView.ShowDialog();
         }
     }
 }

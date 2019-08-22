@@ -8,5 +8,27 @@
         Title="Studenter"
         Width="800">
     <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28.6" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Menu IsMainMenu="True" Padding="5">
+            <MenuItem Header="Studenten">
+                <MenuItem Header="Student immatrikulieren" />
+                <MenuItem Header="Studenten suchen" />
+            </MenuItem>
+            <MenuItem Header="Veranstaltungen">
+                <MenuItem Header="Veranstaltung erstellen" />
+                <MenuItem Header="Veranstaltungen suchen" />
+            </MenuItem>
+            <MenuItem Header="Hilfe">
+                <MenuItem Click="OnAboutClick" Header="Über" />
+                <Separator />
+                <MenuItem Header="Beenden" />
+            </MenuItem>
+        </Menu>
+
     </Grid>
 </Window>

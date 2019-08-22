@@ -6,7 +6,9 @@ namespace Studenter.Presentation.Factories
     public static class DialogFactory
     {
         public static IDialog CreateInstance(ILogicQueries logicQueries, ILogicCommands logicCommands) {
-            var mainView = new MainView();
+            var aboutView = new AboutView();
+
+            var mainView = new MainView(aboutView);
 
             return mainView;
         }

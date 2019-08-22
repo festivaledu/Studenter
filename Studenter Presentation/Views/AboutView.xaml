@@ -1,0 +1,28 @@
+﻿<Window x:Class="Studenter.Presentation.Views.AboutView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="310"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        Title="Über Studenter"
+        Width="320"
+        WindowStartupLocation="CenterOwner">
+    <StackPanel Margin="0,26">
+
+        <TextBlock FontSize="16" HorizontalAlignment="Center" Text="Studenter" />
+        <TextBlock HorizontalAlignment="Center" Margin="0,0,0,26" Text="Studenten- und Veranstaltungsverwaltung" />
+
+        <TextBlock FontSize="14" HorizontalAlignment="Center" Text="Fabian Krahtz" />
+        <TextBlock HorizontalAlignment="Center" Margin="0,0,0,6"  Text="Mat.-Nr.: 70453510" />
+        <TextBlock FontSize="14" HorizontalAlignment="Center" Text="Janik Schmidt" />
+        <TextBlock HorizontalAlignment="Center" Margin="0,0,0,6"  Text="Mat.-Nr.: 00000000" />
+        <TextBlock FontSize="14" HorizontalAlignment="Center" Text="Jonas Zadach" />
+        <TextBlock HorizontalAlignment="Center" Text="Mat.-Nr.: 00000000" />
+
+        <TextBlock HorizontalAlignment="Center" Margin="0,26,0,0" Text="Ein FESTIVAL Projekt" />
+
+    </StackPanel>
+</Window>
