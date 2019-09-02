@@ -9,7 +9,7 @@
         ShowInTaskbar="False"
         Title="Über Studenter"
         Width="320"
-        WindowStartupLocation="CenterOwner">
+        WindowStartupLocation="CenterScreen">
     <StackPanel Margin="0,26">
 
         <TextBlock FontSize="16" HorizontalAlignment="Center" Text="Studenter" />

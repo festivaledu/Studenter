@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Interop;
 using Studenter.Logic;
@@ -13,6 +14,14 @@ namespace Studenter.Presentation.Views
     {
         internal AboutView() {
             InitializeComponent();
+
+            this.Closing += OnClosing;
+        }
+
+        private void OnClosing(object sender, CancelEventArgs e) {
+            this.Hide();
+
+            e.Cancel = true;
         }
 
         private void OnSourceInitialized(object sender, EventArgs e) {

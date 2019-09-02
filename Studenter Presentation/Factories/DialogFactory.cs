@@ -7,8 +7,9 @@ namespace Studenter.Presentation.Factories
     {
         public static IDialog CreateInstance(ILogicQueries logicQueries, ILogicCommands logicCommands) {
             var aboutView = new AboutView();
+            var createStudentView = new CreateStudentView();
 
-            var mainView = new MainView(aboutView);
+            var mainView = new MainView(aboutView, createStudentView);
 
             return mainView;
         }

@@ -15,6 +15,7 @@ namespace Studenter.Monitor
 
         internal void Run() {
             sourcePath = @"C:\Users\Fabian\Documents\Visual Studio 2017\Projects\Studenter\resources\database.accdb";
+            sourcePath = @"G:\Studium\Komponentenbasierte Softwareentwicklung\Studenter\resources\database.accdb";
 
             try {
                 dataReader = DataReaderFactory.CreateInstance(sourcePath);

@@ -6,7 +6,8 @@
         mc:Ignorable="d"
         Height="550"
         Title="Studenter"
-        Width="800">
+        Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -16,7 +17,7 @@
 
         <Menu IsMainMenu="True" Padding="5">
             <MenuItem Header="Studenten">
-                <MenuItem Header="Student immatrikulieren" />
+                <MenuItem Click="OnCreateStudentClick" Header="Student immatrikulieren" />
                 <MenuItem Header="Studenten suchen" />
             </MenuItem>
             <MenuItem Header="Veranstaltungen">
