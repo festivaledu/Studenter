@@ -1,4 +1,6 @@
 ﻿using Studenter.Logic;
+using Studenter.Presentation.Services;
+using Studenter.Presentation.ViewModels;
 using Studenter.Presentation.Views;
 
 namespace Studenter.Presentation.Factories
@@ -6,10 +8,21 @@ namespace Studenter.Presentation.Factories
     public static class DialogFactory
     {
         public static IDialog CreateInstance(ILogicQueries logicQueries, ILogicCommands logicCommands) {
-            var aboutView = new AboutView();
-            var createStudentView = new CreateStudentView();
+            var createService = new CreateStudentService(logicCommands);
+            var searchService = new SearchStudentService(logicQueries);
 
-            var mainView = new MainView(aboutView, createStudentView);
+            var mainVM = new MainViewModel();
+
+            var createStudentVM = new CreateStudentViewModel(createService);
+            var searchResultsVM = new SearchResultsViewModel(mainVM, createService);
+            var searchStudentVM = new SearchStudentViewModel(mainVM, searchService);
+
+            var aboutView = new AboutView();
+            var createStudentView = new CreateStudentView(createStudentVM);
+            var searchResultsView = new SearchResultsView(searchResultsVM);
+            var searchStudentView = new SearchStudentView(searchStudentVM);
+
+            var mainView = new MainView(mainVM, aboutView, createStudentView, searchResultsView, searchStudentView);
 
             return mainView;
         }

@@ -15,6 +15,10 @@ namespace Studenter.Presentation.Services
             logicCommands.CreateStudent(student);
         }
 
+        public void DeleteStudent(Student student) {
+            logicCommands.DeleteStudent(student);
+        }
+
         public void UpdateStudent(Student student) {
             logicCommands.UpdateStudent(student);
         }

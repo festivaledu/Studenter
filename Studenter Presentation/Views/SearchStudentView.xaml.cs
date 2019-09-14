@@ -5,13 +5,13 @@ using Studenter.Presentation.ViewModels;
 namespace Studenter.Presentation.Views
 {
     /// <summary>
-    /// Interaktionslogik für CreateStudentView.xaml
+    /// Interaktionslogik für SearchStudentView.xaml
     /// </summary>
-    public partial class CreateStudentView : Window, IDialog
+    public partial class SearchStudentView : Window, IDialog
     {
-        private CreateStudentViewModel viewModel;
+        private SearchStudentViewModel viewModel;
 
-        internal CreateStudentView(CreateStudentViewModel viewModel) {
+        internal SearchStudentView(SearchStudentViewModel viewModel) {
             InitializeComponent();
 
             this.viewModel = viewModel;
@@ -34,7 +34,7 @@ namespace Studenter.Presentation.Views
             Hide();
         }
 
-        private void OnCreateClick(object sender, RoutedEventArgs e) {
+        private void OnSearchClick(object sender, RoutedEventArgs e) {
             viewModel.Send();
 
             Hide();

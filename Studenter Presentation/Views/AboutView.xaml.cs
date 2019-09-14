@@ -15,11 +15,11 @@ namespace Studenter.Presentation.Views
         internal AboutView() {
             InitializeComponent();
 
-            this.Closing += OnClosing;
+            Closing += OnClosing;
         }
 
         private void OnClosing(object sender, CancelEventArgs e) {
-            this.Hide();
+            Hide();
 
             e.Cancel = true;
         }

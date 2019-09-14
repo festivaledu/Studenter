@@ -12,7 +12,7 @@ namespace Studenter.Presentation.ViewModels
             get => student.Address;
             set {
                 student.Address = value;
-                this.OnPropertyChanged("Address");
+                OnPropertyChanged("Address");
             }
         }
 
@@ -20,7 +20,7 @@ namespace Studenter.Presentation.ViewModels
             get => student.Course;
             set {
                 student.Course = value;
-                this.OnPropertyChanged("Course");
+                OnPropertyChanged("Course");
             }
         }
 
@@ -28,7 +28,7 @@ namespace Studenter.Presentation.ViewModels
             get => student.Email;
             set {
                 student.Email = value;
-                this.OnPropertyChanged("Email");
+                OnPropertyChanged("Email");
             }
         }
 
@@ -36,7 +36,7 @@ namespace Studenter.Presentation.ViewModels
             get => student.Faculty;
             set {
                 student.Faculty = value;
-                this.OnPropertyChanged("Faculty");
+                OnPropertyChanged("Faculty");
             }
         }
 
@@ -44,7 +44,7 @@ namespace Studenter.Presentation.ViewModels
             get => student.FamilyName;
             set {
                 student.FamilyName = value;
-                this.OnPropertyChanged("FamilyName");
+                OnPropertyChanged("FamilyName");
             }
         }
 
@@ -52,7 +52,7 @@ namespace Studenter.Presentation.ViewModels
             get => student.GivenName;
             set {
                 student.GivenName = value;
-                this.OnPropertyChanged("GivenName");
+                OnPropertyChanged("GivenName");
             }
         }
 
@@ -60,22 +60,22 @@ namespace Studenter.Presentation.ViewModels
             get => student.MatrikelNumber;
             set {
                 student.MatrikelNumber = value;
-                this.OnPropertyChanged("MatrikelNumber");
+                OnPropertyChanged("MatrikelNumber");
             }
         }
 
         public CreateStudentViewModel(CreateStudentService service) {
             this.service = service;
-            this.student = new Student();
+            student = new Student();
         }
 
-        public void Clear() {
-            this.student = new Student();
+        internal void Clear() {
+            student = new Student();
         }
 
-        public void Send() {
+        internal void Send() {
             service.CreateStudent(student);
-            this.Clear();
+            Clear();
         }
     }
 }

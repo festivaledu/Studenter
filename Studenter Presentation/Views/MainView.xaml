@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Height="550"
+        ResizeMode="NoResize"
         Title="Studenter"
         Width="800"
         WindowStartupLocation="CenterScreen">
@@ -18,16 +19,12 @@
         <Menu IsMainMenu="True" Padding="5">
             <MenuItem Header="Studenten">
                 <MenuItem Click="OnCreateStudentClick" Header="Student immatrikulieren" />
-                <MenuItem Header="Studenten suchen" />
-            </MenuItem>
-            <MenuItem Header="Veranstaltungen">
-                <MenuItem Header="Veranstaltung erstellen" />
-                <MenuItem Header="Veranstaltungen suchen" />
+                <MenuItem Click="OnSearchStudentClick" Header="Studenten suchen" />
             </MenuItem>
             <MenuItem Header="Hilfe">
                 <MenuItem Click="OnAboutClick" Header="Über" />
                 <Separator />
-                <MenuItem Header="Beenden" />
+                <MenuItem Click="OnCloseClick" Header="Beenden" />
             </MenuItem>
         </Menu>
 

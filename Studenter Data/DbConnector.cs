@@ -59,6 +59,7 @@ namespace Studenter.Data
 
         protected virtual bool OpenConnection() {
             connection.Open();
+
             return connection.State == ConnectionState.Open;
         }
     }
