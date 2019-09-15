@@ -7,7 +7,7 @@ namespace Studenter.Presentation.Services
 {
     internal class SearchStudentService
     {
-        private ILogicQueries logicQueries; 
+        private readonly ILogicQueries logicQueries; 
 
         public SearchStudentService(ILogicQueries logicQueries) {
             this.logicQueries = logicQueries;

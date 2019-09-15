@@ -6,9 +6,11 @@ namespace Studenter.Presentation.ViewModels
 {
     internal class SearchResultsViewModel : BaseViewModel
     {
-        private MainViewModel mainViewModel;
+        private readonly CreateStudentService createService;
+        private readonly MainViewModel mainViewModel;
+        private readonly SearchStudentService searchService;
         private Student selectedStudent;
-        private CreateStudentService service;
+        private ObservableCollection<Student> students;
 
         public Student SelectedStudent {
             get => selectedStudent;
@@ -20,22 +22,30 @@ namespace Studenter.Presentation.ViewModels
         }
 
         public bool StudentSelected => SelectedStudent != null;
-        public ObservableCollection<Student> Students => mainViewModel.Results;
+        public ObservableCollection<Student> Students {
+            get => students = mainViewModel.Results;
+            set {
+                students = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public SearchResultsViewModel(MainViewModel mainViewModel, CreateStudentService service) {
+        public SearchResultsViewModel(MainViewModel mainViewModel, CreateStudentService createService, SearchStudentService searchService) {
             this.mainViewModel = mainViewModel;
-            this.service = service;
+            this.createService = createService;
+            this.searchService = searchService;
         }
 
         internal void Delete() {
             if (SelectedStudent != null) {
-                service.DeleteStudent(SelectedStudent);
+                createService.DeleteStudent(SelectedStudent);
+                mainViewModel.StudentCount = searchService.CountStudents();
             }
         }
 
         internal void Save() {
             if (SelectedStudent != null) {
-                service.UpdateStudent(SelectedStudent);
+                createService.UpdateStudent(SelectedStudent);
             }
         }
     }

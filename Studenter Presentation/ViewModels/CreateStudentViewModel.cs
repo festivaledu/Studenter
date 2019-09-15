@@ -5,7 +5,9 @@ namespace Studenter.Presentation.ViewModels
 {
     class CreateStudentViewModel : BaseViewModel
     {
-        private readonly CreateStudentService service;
+        private readonly CreateStudentService createService;
+        private readonly MainViewModel mainViewModel;
+        private readonly SearchStudentService searchService;
         private Student student;
 
         public string Address {
@@ -64,8 +66,10 @@ namespace Studenter.Presentation.ViewModels
             }
         }
 
-        public CreateStudentViewModel(CreateStudentService service) {
-            this.service = service;
+        public CreateStudentViewModel(MainViewModel mainViewModel, CreateStudentService createService, SearchStudentService searchService) {
+            this.mainViewModel = mainViewModel;
+            this.createService = createService;
+            this.searchService = searchService;
             student = new Student();
         }
 
@@ -74,7 +78,8 @@ namespace Studenter.Presentation.ViewModels
         }
 
         internal void Send() {
-            service.CreateStudent(student);
+            createService.CreateStudent(student);
+            mainViewModel.StudentCount = searchService.CountStudents();
             Clear();
         }
     }

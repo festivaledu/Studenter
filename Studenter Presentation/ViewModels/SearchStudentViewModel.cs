@@ -6,7 +6,7 @@ namespace Studenter.Presentation.ViewModels
 {
     internal class SearchStudentViewModel : BaseViewModel
     {
-        private MainViewModel mainViewModel;
+        private readonly MainViewModel mainViewModel;
         private readonly SearchStudentService service;
         private StudentSearchDto search;
 

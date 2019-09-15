@@ -3,12 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="clr-namespace:Studenter.Presentation.Converters"
+        d:DataContext="Studenter.Presentation.ViewModels.MainViewModel"
         mc:Ignorable="d"
         Height="550"
         ResizeMode="NoResize"
         Title="Studenter"
         Width="800"
         WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <converters:StudentCountConverter x:Key="studentCountConverter" />
+    </Window.Resources>
+    
     <Grid>
 
         <Grid.RowDefinitions>
@@ -27,6 +34,10 @@
                 <MenuItem Click="OnCloseClick" Header="Beenden" />
             </MenuItem>
         </Menu>
+
+        <Grid Grid.Row="1" Margin="12">
+            <TextBlock Text="{Binding StudentCount, Converter={StaticResource studentCountConverter}}" />
+        </Grid>
 
     </Grid>
 </Window>

@@ -14,8 +14,8 @@ namespace Studenter.Presentation.Views
     /// </summary>
     public partial class SearchResultsView : Window, IDialog
     {
-        private List<string> disallowEditOn = new List<string>() { nameof(Student.Email), nameof(Student.FamilyName), nameof(Student.GivenName), nameof(Student.Id), nameof(Student.MatrikelNumber) };
-        private SearchResultsViewModel viewModel;
+        private readonly List<string> disallowEditOn = new List<string>() { nameof(Student.Email), nameof(Student.FamilyName), nameof(Student.GivenName), nameof(Student.Id), nameof(Student.MatrikelNumber) };
+        private readonly SearchResultsViewModel viewModel;
 
         internal SearchResultsView(SearchResultsViewModel viewModel) {
             InitializeComponent();
@@ -59,6 +59,8 @@ namespace Studenter.Presentation.Views
 
             if (MessageBox.Show($"Möchten Sie den Studenten {viewModel.SelectedStudent.MatrikelNumber} wirklich exmatrikulieren?", "Studenter", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes) {
                 viewModel.Delete();
+
+                Hide();
             }
         }
 

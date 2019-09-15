@@ -9,17 +9,18 @@ namespace Studenter.Presentation.Views
     /// </summary>
     public partial class MainView : Window, IDialog
     {
-        private MainViewModel viewModel;
+        private readonly MainViewModel viewModel;
 
-        private AboutView aboutView;
-        private CreateStudentView createStudentView;
-        private SearchResultsView searchResultsView;
-        private SearchStudentView searchStudentView;
+        private readonly AboutView aboutView;
+        private readonly CreateStudentView createStudentView;
+        private readonly SearchResultsView searchResultsView;
+        private readonly SearchStudentView searchStudentView;
 
         internal MainView(MainViewModel viewModel, AboutView aboutView, CreateStudentView createStudentView, SearchResultsView searchResultsView, SearchStudentView searchStudentView) {
             InitializeComponent();
 
             this.viewModel = viewModel;
+            DataContext = this.viewModel;
 
             this.aboutView = aboutView;
             this.createStudentView = createStudentView;
@@ -49,6 +50,7 @@ namespace Studenter.Presentation.Views
             searchStudentView.ShowDialog();
 
             if (!viewModel.SearchCancelled) {
+                ((SearchResultsViewModel) searchResultsView.DataContext).Students = viewModel.Results;
                 searchResultsView.ShowDialog();
             }
         }

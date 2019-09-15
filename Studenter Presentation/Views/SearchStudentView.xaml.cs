@@ -9,7 +9,7 @@ namespace Studenter.Presentation.Views
     /// </summary>
     public partial class SearchStudentView : Window, IDialog
     {
-        private SearchStudentViewModel viewModel;
+        private readonly SearchStudentViewModel viewModel;
 
         internal SearchStudentView(SearchStudentViewModel viewModel) {
             InitializeComponent();
@@ -18,6 +18,7 @@ namespace Studenter.Presentation.Views
             DataContext = this.viewModel;
 
             Closing += OnClosing;
+            IsVisibleChanged += OnIsVisibleChanged;
         }
 
         private void OnClosing(object sender, System.ComponentModel.CancelEventArgs e) {
@@ -34,10 +35,18 @@ namespace Studenter.Presentation.Views
             Hide();
         }
 
+        private void OnIsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e) {
+            if ((bool) e.NewValue) {
+                _ = this.viewModel.Faculties;
+            }
+        }
+
         private void OnSearchClick(object sender, RoutedEventArgs e) {
             viewModel.Send();
 
             Hide();
         }
+
+
     }
 }

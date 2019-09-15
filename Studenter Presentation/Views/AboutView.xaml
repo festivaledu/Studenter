@@ -18,9 +18,9 @@
         <TextBlock FontSize="14" HorizontalAlignment="Center" Text="Fabian Krahtz" />
         <TextBlock HorizontalAlignment="Center" Margin="0,0,0,6"  Text="Mat.-Nr.: 70453510" />
         <TextBlock FontSize="14" HorizontalAlignment="Center" Text="Janik Schmidt" />
-        <TextBlock HorizontalAlignment="Center" Margin="0,0,0,6"  Text="Mat.-Nr.: 00000000" />
+        <TextBlock HorizontalAlignment="Center" Margin="0,0,0,6"  Text="Mat.-Nr.: 70454016" />
         <TextBlock FontSize="14" HorizontalAlignment="Center" Text="Jonas Zadach" />
-        <TextBlock HorizontalAlignment="Center" Text="Mat.-Nr.: 00000000" />
+        <TextBlock HorizontalAlignment="Center" Text="Mat.-Nr.: 70453310" />
 
         <TextBlock HorizontalAlignment="Center" Margin="0,26,0,0" Text="Ein FESTIVAL Projekt" />
 

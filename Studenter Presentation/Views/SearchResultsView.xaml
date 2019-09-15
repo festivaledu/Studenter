@@ -22,7 +22,7 @@
             <MenuItem Click="OnDeleteClick" Header="Exmatrikulieren" IsEnabled="{Binding StudentSelected, Mode=OneWay}" />
         </Menu>
 
-        <DataGrid Grid.Row="1" AlternationCount="2" AlternatingRowBackground="WhiteSmoke" AutoGenerateColumns="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" Loaded="OnDataGridLoaded" ItemsSource="{Binding Students}" PreparingCellForEdit="OnDataGridPreparingCellForEdit" SelectionChanged="OnDataGridSelectionChanged" />
+        <DataGrid Grid.Row="1" AlternationCount="2" AlternatingRowBackground="WhiteSmoke" AutoGenerateColumns="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" Loaded="OnDataGridLoaded" ItemsSource="{Binding Students, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PreparingCellForEdit="OnDataGridPreparingCellForEdit" SelectionChanged="OnDataGridSelectionChanged" />
 
     </Grid>
 </Window>

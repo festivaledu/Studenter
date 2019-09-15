@@ -50,7 +50,7 @@
 
                         <StackPanel Grid.Column="1">
                             <Label>Fakultät</Label>
-                            <ComboBox FontSize="14" IsEditable="True" Margin="5,0,5,5" Padding="2" ItemsSource="{Binding Faculties, Mode=OneWay}" SelectedItem="{Binding SelectedFaculty, Mode=TwoWay}" TabIndex="5" />
+                            <ComboBox FontSize="14" IsEditable="True" Margin="5,0,5,5" Padding="2" ItemsSource="{Binding Faculties, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedFaculty, Mode=TwoWay}" TabIndex="5" />
                         </StackPanel>
                     </Grid>
                 </StackPanel>

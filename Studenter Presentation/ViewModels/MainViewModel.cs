@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using Studenter.Logic.Entities;
 using Studenter.Logic.TransferObjects;
+using Studenter.Presentation.Services;
 
 namespace Studenter.Presentation.ViewModels
 {
@@ -8,6 +9,7 @@ namespace Studenter.Presentation.ViewModels
     {
         private ObservableCollection<Student> results = new ObservableCollection<Student>();
         private StudentSearchDto search;
+        private int studentCount;
 
         public ObservableCollection<Student> Results {
             get => results;
@@ -27,6 +29,16 @@ namespace Studenter.Presentation.ViewModels
 
         public bool SearchCancelled { get; set; }
 
-        internal MainViewModel() {}
+        public int StudentCount {
+            get => studentCount;
+            set {
+                studentCount = value;
+                OnPropertyChanged();
+            }
+        }
+
+        internal MainViewModel(SearchStudentService service) {
+            this.studentCount = service.CountStudents();
+        }
     }
 }

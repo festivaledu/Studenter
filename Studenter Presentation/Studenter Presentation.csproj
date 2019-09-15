@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\StringToInt32Converter.cs" />
+    <Compile Include="Converters\StudentCountConverter.cs" />
     <Compile Include="Factories\DialogFactory.cs" />
     <Compile Include="Helpers\WinHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

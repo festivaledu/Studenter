@@ -9,7 +9,7 @@ namespace Studenter.Presentation.Views
     /// </summary>
     public partial class CreateStudentView : Window, IDialog
     {
-        private CreateStudentViewModel viewModel;
+        private readonly CreateStudentViewModel viewModel;
 
         internal CreateStudentView(CreateStudentViewModel viewModel) {
             InitializeComponent();

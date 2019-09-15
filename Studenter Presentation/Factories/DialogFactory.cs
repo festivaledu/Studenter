@@ -11,10 +11,10 @@ namespace Studenter.Presentation.Factories
             var createService = new CreateStudentService(logicCommands);
             var searchService = new SearchStudentService(logicQueries);
 
-            var mainVM = new MainViewModel();
+            var mainVM = new MainViewModel(searchService);
 
-            var createStudentVM = new CreateStudentViewModel(createService);
-            var searchResultsVM = new SearchResultsViewModel(mainVM, createService);
+            var createStudentVM = new CreateStudentViewModel(mainVM, createService, searchService);
+            var searchResultsVM = new SearchResultsViewModel(mainVM, createService, searchService);
             var searchStudentVM = new SearchStudentViewModel(mainVM, searchService);
 
             var aboutView = new AboutView();
