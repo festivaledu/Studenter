@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows;
 using Studenter.Data.Factories;
 using Studenter.Logic;
@@ -14,8 +15,7 @@ namespace Studenter.Monitor
         private string sourcePath;
 
         internal void Run() {
-            sourcePath = @"C:\Users\Fabian\Documents\Visual Studio 2017\Projects\Studenter\resources\database.accdb";
-            sourcePath = @"G:\Studium\Komponentenbasierte Softwareentwicklung\Studenter\resources\database.accdb";
+            sourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"resources\database.accdb");
 
             try {
                 dataReader = DataReaderFactory.CreateInstance(sourcePath);

@@ -2,6 +2,8 @@
 using Studenter.Data.Factories;
 using Studenter.Logic;
 using Studenter.Logic.TransferObjects;
+using System;
+using System.IO;
 
 namespace Studenter.Tests
 {
@@ -12,7 +14,7 @@ namespace Studenter.Tests
 
         [TestInitialize]
         public void Initialize() {
-            reader = DataReaderFactory.CreateInstance(@"G:\Studium\Komponentenbasierte Softwareentwicklung\Studenter\resources\database.accdb");
+            reader = DataReaderFactory.CreateInstance(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"resources\database.accdb"));
             Assert.IsNotNull(reader, "Could not instantiate the IDataReader");
 
             reader.InitDb();
